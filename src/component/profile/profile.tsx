@@ -31,11 +31,17 @@ const Profile = React.memo(() => {
         <br/>
         <div className={"child"}>
             {devices.map(e => (
-                <Device name={e.name}
-                        location={e.location}
-                        threshold={e.threshold}
-                        isCritical={e.isCritical}
-                        temperature={e.temperature}
+                <Device thermostat={
+                    {
+                        id: e.id!,
+                        name: e.name,
+                        threshold: e.threshold,
+                        temperature: e.temperature,
+                        location: e.location,
+                        isCritical: e.isCritical
+                    }
+                }
+                        setDevices={setDevices}
                 />))}
             <AddDevice setDevices={setDevices}/>
         </div>

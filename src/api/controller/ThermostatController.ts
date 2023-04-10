@@ -27,6 +27,18 @@ class ThermostatController {
             console.error(error);
         }
     }
+
+    async deleteById(args: { id: number }): Promise<void> {
+        try {
+            const response = await axios.delete(`${this.baseUrl}/thermostat/${args.id}`,
+                {
+                    headers: headerWithName()
+                });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }
 
 export default ThermostatController;

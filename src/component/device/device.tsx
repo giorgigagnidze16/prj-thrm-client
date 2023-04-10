@@ -5,13 +5,14 @@ import "./device.css"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+
+const controller = new ThermostatController();
 const DeviceForm = React.memo(
     ({title, setDevices}: { title: string, setDevices: React.Dispatch<React.SetStateAction<Thermostat[]>>; }
     ) => {
         const [name, setUsername] = useState<string | null>(null)
         const [location, setLocation] = useState<string>(Location[0])
         const [threshold, setThreshold] = useState<number | null>(null)
-        const controller = new ThermostatController()
         const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
             setLocation(Location[Number.parseInt(event.target.value)]);
         };
@@ -61,8 +62,18 @@ const DeviceForm = React.memo(
     })
 
 export const Device = React.memo(
-    (thermostat: Thermostat
+    ({
+         thermostat,
+         setDevices
+     }: { thermostat: Thermostat, setDevices: React.Dispatch<React.SetStateAction<Thermostat[]>>; }
     ) => {
+        const handleDelete = () => {
+            if (window.confirm("Are you sure you want to delete this item?")) {
+                controller.deleteById({id: thermostat.id!})
+                    .then(() => setDevices(prevState => prevState.filter(t => t.id !== thermostat.id)))
+                    .catch(e => alert(e.message));
+            }
+        }
         return (
             <div className={"deviceWrapper"}>
                 <span className={"edit"}>
@@ -86,7 +97,7 @@ export const Device = React.memo(
                 <label htmlFor={"crit"}>Critical:</label>
                 <span id={"thr"}>{thermostat.isCritical ? "YES" : "NO"}</span>
 
-                <span className={"delete"}>
+                <span className={"delete"} onClick={handleDelete}>
                     <DeleteIcon className={"dicon"}/>
                 </span>
             </div>

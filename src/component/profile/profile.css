@@ -3,11 +3,10 @@ body {
 }
 
 .add {
-    width: 145px;
-    height: 145px;
+    width: 100px;
+    height: 130px;
     margin-left: 5px;
 }
-
 
 .goBack {
     position: absolute;
