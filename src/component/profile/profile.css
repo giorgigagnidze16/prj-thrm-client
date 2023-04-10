@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, serif;
+}
+
+.add {
+    width: 145px;
+    height: 145px;
+    margin-left: 5px;
+}
+
+
+.goBack {
+    position: absolute;
+    display: block;
+    top: 10px;
+    left: 10px;
+    margin: 6px auto 0;
+    background-color: #1A5F7A;
+    color: white;
+    border-style: solid;
+    border-color: #1A5F7A;
+    width: 120px;
+    height: 35px;
+    border-radius: 3px;
+    font-size: 14px;
+    padding-right: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.child {
+    display: block;
+    width: 85vw;
+    margin: 0 auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: red;
+    min-height: 760px;
+    padding: 10px;
+}
+
+.button {
+    display: inline-block;
+    cursor: pointer;
+}

@@ -1,0 +1,99 @@
+.formWrapper {
+    display: flex;
+    height: 98vh;
+    width: 98vw;
+    align-items: center;
+    justify-content: center;
+}
+
+html, body {
+    font-family: Arial, serif !important;
+    background-color: #f4f4f4;
+    height: 100%;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    top: 10px;
+    width: 600px;
+    height: 400px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border-radius: 13px;
+    box-shadow: 1px 1px 1px #e9e9e9;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrapper input {
+    display: block;
+    width: 300px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-size: 16px;
+    border-color: #cecec5;
+    margin: 0 auto;
+    font-family: Arial, serif !important;
+}
+
+.wrapper input:focus {
+    outline: none;
+}
+
+.wrapper {
+    margin-bottom: 15px;
+}
+
+
+.wrapper label {
+    display: block;
+    width: 310px;
+    font-size: 14px;
+    margin: 0 auto 5px;
+}
+
+.saveButton {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 35px;
+    border-radius: 3px;
+    border-style: solid;
+    color: white;
+    border-color: #ce4a4a;
+    background-color: #CE5959;
+    font-size: 14px;
+    font-family: Arial, serif !important;
+    cursor: pointer;
+}
+
+.goBack {
+    position: absolute;
+    display: block;
+    top: 10px;
+    left: 10px;
+    margin: 6px auto 0;
+    background-color: #1A5F7A;
+    color: white;
+    border-style: solid;
+    border-color: #1A5F7A;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px;
+    padding-right: 10px;
+    text-align: center;
+    cursor: pointer;
+}
