@@ -97,3 +97,14 @@ h1 {
     text-align: center;
     cursor: pointer;
 }
+
+.title {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 0px #ffffff;
+}

@@ -13,5 +13,6 @@ export type Thermostat = {
     location: string,
     threshold: number,
     temperature?: number,
-    isCritical?: boolean
+    isCritical?: boolean,
+    critical?: boolean
 }

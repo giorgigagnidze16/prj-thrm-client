@@ -165,3 +165,60 @@
 .dicon:hover {
     fill: red;
 }
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    height: 350px;
+    padding: 20px;
+}
+
+.popup input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 290px;
+    height: 20px;
+}
+
+select {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.popup label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    position: relative;
+    left: -105px;
+}
+
+.popup button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 290px;
+}
+
+
+.popup button:hover {
+    background-color: #318a35;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+}
+
+.warning {
+    position: absolute;
+    transform: translate(-110%, -80%);
+}

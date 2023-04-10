@@ -65,7 +65,7 @@ const Form = React.memo(
         return (
             <div className={"wrapper"}>
                 <div style={{height: "80%"}}>
-                    <h1>{title}</h1>
+                    <h1 className={"title"}>{title}</h1>
                     <br/>
                     <label htmlFor={"name"}>
                         Username:

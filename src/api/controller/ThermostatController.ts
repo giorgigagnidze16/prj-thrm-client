@@ -28,9 +28,33 @@ class ThermostatController {
         }
     }
 
+    async findById(args: { id: number }): Promise<Thermostat | undefined> {
+        try {
+            const response = await axios.get(`${this.baseUrl}/thermostat/${args.id}`,
+                {
+                    headers: headerWithName()
+                });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     async deleteById(args: { id: number }): Promise<void> {
         try {
             const response = await axios.delete(`${this.baseUrl}/thermostat/${args.id}`,
+                {
+                    headers: headerWithName()
+                });
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async updateThermostat(args: Thermostat): Promise<Thermostat | undefined> {
+        try {
+            const response = await axios.post(`${this.baseUrl}/thermostat`, args,
                 {
                     headers: headerWithName()
                 });
