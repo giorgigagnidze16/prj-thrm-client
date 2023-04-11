@@ -125,14 +125,7 @@ export const Device = React.memo(
         };
 
         const isCritical = () => {
-            if (!editedThermostat.temperature) return;
-            if (editedThermostat.temperature > 0 && editedThermostat.threshold > 0) {
-                return editedThermostat.temperature >= editedThermostat.threshold;
-            } else if (editedThermostat.temperature < 0 && editedThermostat.threshold > 0) {
-                return false;
-            } else if (editedThermostat.temperature < 0 && editedThermostat.threshold < 0) {
-                return editedThermostat.temperature <= editedThermostat.threshold;
-            }
+            return editedThermostat.temperature! >= editedThermostat.threshold;
         }
 
         return (
