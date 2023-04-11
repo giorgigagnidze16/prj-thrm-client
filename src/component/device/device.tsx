@@ -38,7 +38,7 @@ const DeviceForm = React.memo(
                                         }
                                     })
                                     .catch(err => alert("error " + err.message))
-                            }, 250)
+                            }, 500)
                         }
                     })
                     .catch(err => alert("error " + err.message))
@@ -110,7 +110,7 @@ export const Device = React.memo(
                 name: editedThermostat.name,
                 threshold: editedThermostat.threshold,
                 location: editedThermostat.location,
-                isCritical: editedThermostat.temperature! >= editedThermostat.threshold
+                isCritical: isCritical()
             };
             if (JSON.stringify(updated) !== JSON.stringify(thermostat))
                 controller.updateThermostat(updated)
@@ -124,9 +124,20 @@ export const Device = React.memo(
             setIsEditing(false);
         };
 
+        const isCritical = () => {
+            if (!editedThermostat.temperature) return;
+            if (editedThermostat.temperature > 0 && editedThermostat.threshold > 0) {
+                return editedThermostat.temperature >= editedThermostat.threshold;
+            } else if (editedThermostat.temperature < 0 && editedThermostat.threshold > 0) {
+                return false;
+            } else if (editedThermostat.temperature < 0 && editedThermostat.threshold < 0) {
+                return editedThermostat.temperature <= editedThermostat.threshold;
+            }
+        }
+
         return (
             <div className={"deviceWrapper"}>
-                {thermostat.temperature! >= thermostat.threshold &&
+                {((thermostat.temperature! >= thermostat.threshold) || thermostat.isCritical) &&
                     <span className={"warning"}>
                         <PriorityHighIcon style={{fill: "red"}} fontSize={"large"}/>
                     </span>
