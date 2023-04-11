@@ -26,17 +26,19 @@ const DeviceForm = React.memo(
                 controller.save({name: name, threshold: threshold, location: location})
                     .then(data => {
                         if (data) {
-                            controller.findById({id: data.id!})
-                                .then(d => {
-                                    if (d) {
-                                        if (devices.length > 0) {
-                                            setDevices(prevState => [...prevState, d])
-                                        } else {
-                                            setDevices([d])
+                            setTimeout(() => {
+                                controller.findById({id: data.id!})
+                                    .then(d => {
+                                        if (d) {
+                                            if (devices.length > 0) {
+                                                setDevices(prevState => [...prevState, d])
+                                            } else {
+                                                setDevices([d])
+                                            }
                                         }
-                                    }
-                                })
-                                .catch(err => alert("error " + err.message))
+                                    })
+                                    .catch(err => alert("error " + err.message))
+                            }, 250)
                         }
                     })
                     .catch(err => alert("error " + err.message))
