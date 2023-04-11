@@ -205,7 +205,7 @@ export const Device = React.memo(
                 <span id={"thr"}>{thermostat.threshold}°</span>
                 <br/>
                 <label htmlFor={"crit"}>Critical:</label>
-                <span id={"thr"}>{thermostat.isCritical ? "Yes" : "No"}</span>
+                <span id={"thr"}>{editedThermostat.isCritical ? "Yes" : "No"}</span>
                 <span className={"delete"} onClick={handleDelete}>
                     <DeleteIcon className={"dicon"} fontSize={"large"}/>
                 </span>
